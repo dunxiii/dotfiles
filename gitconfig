@@ -1,0 +1,16 @@
+[user]
+    name = Jack Söderblom
+    email = dunxiii@gmail.com
+
+[includeIf "gitdir:~/Ansible/"]
+    path = ~/Nextcloud/.gitconfig
+
+[includeIf "gitdir:~/Git-work/"]
+    path = ~/Nextcloud/.gitconfig
+
+[alias]
+    st = status -sb
+    br = branch
+    ci = commit
+    co = checkout
+    visual = !gitk

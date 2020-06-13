@@ -1,0 +1,61 @@
+{
+    "window.titleBarStyle": "custom",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile",
+    "files.exclude": {
+        "**/._sync*": false,
+        "**/.*": false,
+        "**/__pycache__": false
+    },
+    "workbench.tree.indent": 16,
+    "explorer.autoReveal": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "markup.heading.markdown punctuation.definition.heading.markdown",
+                "settings": {
+                    "foreground": "#8a8888",
+                }
+            },
+            {
+                "scope": "heading.1.markdown entity.name.section.markdown",
+                "settings": {
+                    "foreground": "#4d85c3",
+                }
+            },
+            {
+                "scope": "heading.2.markdown entity.name.section.markdown",
+                "settings": {
+                    "foreground": "#389674",
+                }
+            },
+            {
+                "scope": "heading.3.markdown entity.name.section.markdown",
+                "settings": {
+                    "foreground": "#b0be1e",
+                }
+            },
+            {
+                "scope": "heading.4.markdown entity.name.section.markdown",
+                "settings": {
+                    "foreground": "#8594c8",
+                }
+            },
+            {
+                "scope": "heading.5.markdown entity.name.section.markdown",
+                "settings": {
+                    "foreground": "#f76328",
+                }
+            },
+            {
+                "scope": "heading.6.markdown entity.name.section.markdown",
+                "settings": {
+                    "foreground": "#fccf3e",
+                }
+            },
+        ]
+    },
+    "window.zoomLevel": 0,
+    "editor.mouseWheelZoom": true,
+    "python.venvPath": "~/venv"
+}
