@@ -1,5 +1,6 @@
 - defaults:
     link:
+      force: true
       relink: true
 
 - clean: ['~']
@@ -8,8 +9,9 @@
     ~/.tmux.conf: tmux.conf
     ~/.bashrc: bashrc
     ~/.vimrc: vimrc
-
-- create:
+    ~/.config/Code/User/settings.json: settings.json
+    ~/.config/ranger/rc.conf: rc.conf
+    ~/.gitconfig: gitconfig
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

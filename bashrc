@@ -137,7 +137,6 @@ if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
     . /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
 
-helm_path=$(which helm3 2>/dev/null)
-if [ -f ${helm_path} ]; then
-    . <(${helm_path} completion bash)
+if which helm 2>/dev/null; then
+    . <(helm completion bash)
 fi

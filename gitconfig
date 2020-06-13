@@ -9,6 +9,7 @@
     path = ~/Nextcloud/.gitconfig
 
 [alias]
+    pull = --recurse-submodules
     st = status -sb
     br = branch
     ci = commit
