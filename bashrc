@@ -100,6 +100,7 @@ alias r="source ~/.bashrc"
 alias grep="grep --color=always"
 alias k=". kcontext-switcher.sh"
 alias ssh-forcepass="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
+alias dirshare="python3 -m http.server"
 
 #
 # make less more friendly for non-text input files, see lesspipe(1)
