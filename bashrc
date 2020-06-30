@@ -140,11 +140,11 @@ test -f /usr/share/git-core/contrib/completion/git-prompt.sh && \
     . /usr/share/git-core/contrib/completion/git-prompt.sh
 
 # Kubernetes
-if which helm >/dev/null; then
+if which helm 2>/dev/null; then
     . <(helm completion bash)
 fi
 
-if which kubectl >/dev/null; then
+if which kubectl 2>/dev/null; then
     . <(kubectl completion bash)
 fi
 
