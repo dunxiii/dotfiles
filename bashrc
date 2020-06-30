@@ -98,7 +98,6 @@ alias dmesg="sudo dmesg -we --color=always | less -R"
 alias df="df -h -xsquashfs -xtmpfs -xdevtmpfs"
 alias r="source ~/.bashrc"
 alias grep="grep --color=always"
-alias tma="ssh -X -t admin 'tmux a || tmux'"
 alias k=". kcontext-switcher.sh"
 alias ssh-forcepass="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 
@@ -121,22 +120,31 @@ fi
 #
 # Source other files
 #
-if [ -f ~/.fzf.bash ]; then
+
+test -f ~/.fzf.bash && \
     . ~/.fzf.bash
-fi
 
-if [ -f /usr/share/doc/ranger/examples/bash_automatic_cd.sh ]; then
+test -f /usr/share/doc/ranger/examples/bash_automatic_cd.sh && \
     . /usr/share/doc/ranger/examples/bash_automatic_cd.sh
-fi
 
-if [ -f /usr/share/doc/ranger/examples/bash_subshell_notice.sh ]; then
+# Fedora
+test -f /usr/share/doc/ranger/examples/bash_subshell_notice.sh && \
     . /usr/share/doc/ranger/examples/bash_subshell_notice.sh
-fi
 
-if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+# Ubuntu
+test -f /usr/share/doc/ranger/examples/shell_automatic_cd.sh && \
+    . /usr/share/doc/ranger/examples/shell_automatic_cd.sh
+
+# Git
+test -f /usr/share/git-core/contrib/completion/git-prompt.sh && \
     . /usr/share/git-core/contrib/completion/git-prompt.sh
-fi
 
-if which helm 2>/dev/null; then
+# Kubernetes
+if which helm >/dev/null; then
     . <(helm completion bash)
 fi
+
+if which kubectl >/dev/null; then
+    . <(kubectl completion bash)
+fi
+
