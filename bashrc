@@ -43,11 +43,6 @@ shopt -s checkwinsize
 export LC_COLLATE="C"
 
 #
-# Reset SSH env var
-#
-eval $(tmux showenv -s SSH_AUTH_SOCK 2>/dev/null)
-
-#
 # PS1 colors
 #
 c_red="\[\033[01;31m\]"
@@ -101,6 +96,8 @@ alias grep="grep --color=always"
 alias k=". kcontext-switcher.sh"
 alias ssh-forcepass="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 alias dirshare="python3 -m http.server"
+# This tmux command will bork non-tmux sessions, aka remove ssh-agent env's
+alias t="eval $(tmux showenv -s SSH_AUTH_SOCK 2>/dev/null)"
 
 #
 # make less more friendly for non-text input files, see lesspipe(1)
