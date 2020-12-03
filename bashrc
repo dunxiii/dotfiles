@@ -72,15 +72,14 @@ export PATH=${PATH}:/home/jaso/Nextcloud/bin:/home/jaso/bin
 #
 # Prompt
 #
-sshkey_available(){
-    ssh-add -L 1>/dev/null 2>&1 && echo -e "  "
-}
-git_branch(){
-    __git_ps1 "  (%s)"
+prompt_command(){
+    ssh_key_avail=$(ssh-add -L 1>/dev/null 2>&1 && echo " K")
+    prompt_time=$(echo -n [$(date +%H:%M)])
+    git_brach=$(__git_ps1 "  (%s)")
 }
 
-PS1="${c_green}\u@\h${c_clear} ${c_blue}\w${c_clear}"
-PS1+='$(sshkey_available)$(git_branch) $ '
+PROMPT_COMMAND="prompt_command"
+PS1="\${prompt_time} ${c_green}\u@\h${c_clear}${c_yellow}\${ssh_key_avail}${c_clear} ${c_blue}\w${c_clear}\${git_brach} "
 
 #
 # Alias
@@ -98,6 +97,7 @@ alias ssh-forcepass="ssh -o PreferredAuthentications=password -o PubkeyAuthentic
 alias dirshare="python3 -m http.server"
 # This tmux command will bork non-tmux sessions, aka remove ssh-agent env's
 alias t="eval $(tmux showenv -s SSH_AUTH_SOCK 2>/dev/null)"
+alias get_ip="curl https://icanhazip.com/"
 
 #
 # make less more friendly for non-text input files, see lesspipe(1)
