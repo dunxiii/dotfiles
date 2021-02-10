@@ -67,7 +67,7 @@ export EDITOR=vim
 #
 # env vars
 #
-export PATH=${PATH}:/home/jaso/Nextcloud/bin:/home/jaso/bin
+export PATH=${PATH}:/home/jacsod/Nextcloud/bin:/home/jacsod/bin
 
 #
 # Prompt
@@ -119,9 +119,7 @@ fi
 # Source other files
 #
 
-test -f ~/.fzf.bash && \
-    . ~/.fzf.bash
-
+# Ranger
 test -f /usr/share/doc/ranger/examples/bash_automatic_cd.sh && \
     . /usr/share/doc/ranger/examples/bash_automatic_cd.sh
 
@@ -132,6 +130,16 @@ test -f /usr/share/doc/ranger/examples/bash_subshell_notice.sh && \
 # Ubuntu
 test -f /usr/share/doc/ranger/examples/shell_automatic_cd.sh && \
     . /usr/share/doc/ranger/examples/shell_automatic_cd.sh
+
+if type ranger_cd >/dev/null; then
+    alias ranger="ranger_cd"
+else
+    alias ranger="ranger-cd"
+fi
+
+# FZF
+test -f ~/.fzf.bash && \
+    . ~/.fzf.bash
 
 # Git
 test -f /usr/share/git-core/contrib/completion/git-prompt.sh && \
