@@ -10,8 +10,8 @@
     ~/.bashrc: bashrc
     ~/.vimrc: vimrc
     ~/.config/Code/User/settings.json: settings.json
-    #~/.config/ranger/rc.conf: rc.conf
     ~/.gitconfig: gitconfig
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [cat gnome-term.conf | dconf load /org/gnome/terminal/legacy/profiles:/, Configuring gnome-terminal]
